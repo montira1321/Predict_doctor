@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ระบบทำนายแพทย์และสาขาจากอาการ</title>
+    <style>
+        body { font-family: 'Tahoma', sans-serif; padding: 30px; }
+        h2 { color: #2c3e50; }
+        textarea { width: 100%; padding: 10px; }
+        input[type=submit] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>ระบบทำนายแพทย์และสาขาที่เหมาะสมจากอาการของผู้ป่วย</h2>
+    <form action="/predict" method="post">
+        <label for="symptom">กรอกอาการของผู้ป่วย:</label><br>
+        <textarea name="symptom" rows="4" placeholder="พิมพ์อาการของผู้ป่วยที่นี่..."></textarea><br><br>
+        <input type="submit" value="ทำนาย">
+    </form>
+
+    <!-- ส่วนนี้จะนำไปใช้ฝั่งเซิร์ฟเวอร์แสดงผลลัพธ์ -->
+    <!--
+    {% if prediction %}
+        <h3>ผลการทำนาย:</h3>
+        <p><strong>แพทย์:</strong> {{ doctor }}</p>
+        <p><strong>สาขา:</strong> {{ department }}</p>
+    {% endif %}
+    -->
+</body>
+</html>
